@@ -1,0 +1,66 @@
+/* Global Variables */
+:root {
+  --main-color: #4db0ff;
+  --main-color-alt: #3585c7;
+  --section-background: #ececec;
+  --section-alt-background: #fbfbfb;
+  --main-transition: 0.5s;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --transition-delay: 1s;
+  --animation-time: 0.6s;
+  --animation-alt-time: 5s;
+  --icon-hight: 10%;
+}
+/* Global Rules */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color-alt);
+}
+a {
+  text-decoration: none;
+}
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  main {
+    width: 750px;
+  }
+}
+/* Medium Screen */
+@media (min-width: 992px) {
+  main {
+    width: 970px;
+  }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+  main {
+    width: 1170px;
+  }
+}
