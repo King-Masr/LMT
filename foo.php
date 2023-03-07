@@ -1,9 +1,7 @@
 <?php
   $uri = str_replace("foo.php", "", $_SERVER["SCRIPT_NAME"]);
-  // $dns = "mysql:host=sql213.epizy.com;dbname=epiz_31734586_lmt";
   $dns = "mysql:host=127.0.0.1;dbname=lmt";
   $option = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;");
-  // $db = new PDO($dns, "epiz_31734586", "hoA5gxEEYHo4", $option);
   $db = new PDO($dns, "root", "", $option);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
