@@ -1,0 +1,220 @@
+/* Global Variables */
+:root {
+  --first-color: #c73535;
+  --second-color: #3585c7;
+  --third-color: #59c735;
+  --fourth-color: #e4e4e4;
+  --fifth-color: #f3f3f3;
+  --main-transition: 0.7s;
+  --animation-duration: 0.5s;
+}
+/* Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../imgs/background.jpg");
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  main {
+    width: 750px;
+  }
+}
+/* Medium Screen */
+@media (min-width: 992px) {
+  main {
+    width: 970px;
+  }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+  main {
+    width: 1170px;
+  }
+}
+#mainTitle {
+  z-index: 1;
+  color: white;
+  cursor: default;
+  font-size: 30px;
+  user-select: none;
+  width: fit-content;
+  position: relative;
+  padding: 10px 20px;
+  margin: 0 auto 80px;
+  border: 2px solid white;
+  transition: var(--main-transition);
+}
+#mainTitle:hover {
+  color: black;
+  border: 2px solid black;
+  transition-delay: var(--main-transition);
+}
+#mainTitle::before,
+#mainTitle::after {
+  top: 50%;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: var(--second-color);
+}
+#mainTitle::before {
+  left: -30px;
+}
+#mainTitle::after {
+  right: -30px;
+}
+#mainTitle:hover::before {
+  z-index: -1;
+  animation: leftToRight var(--animation-duration) linear forwards;
+}
+#mainTitle:hover::after {
+  z-index: -1;
+  animation: rightToLift var(--animation-duration) linear forwards;
+}
+/* Landing section */
+section#landing {
+  padding: 20px;
+  position: relative;
+}
+#landing main #login {
+  margin: auto;
+  padding: 30px;
+  overflow: hidden;
+  width: fit-content;
+  border-radius: 6px;
+  background-color: #cacaca90;
+  box-shadow: 0 2px 15px #00000050;
+}
+#landing #tabs {
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#landing #tabs li {
+  padding: 10px;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--fourth-color);
+}
+#landing #tabs #active {
+  background-color: var(--second-color);
+}
+#landing main #content {
+  padding: 0 10px;
+}
+#landing #content form {
+  padding: 5px;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: var(--second-color);
+}
+#landing #content form#Signin {
+  display: none;
+}
+#landing form #errormessage {
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  user-select: none;
+  position: absolute;
+  color: var(--fifth-color);
+  border-bottom-left-radius: 20px;
+  background-color: var(--first-color);
+}
+#landing form ul {
+  padding: 10px;
+  display: inline-block;
+}
+#landing form li {
+  height: 50px;
+  padding: 10px;
+  margin: 10px 0;
+  display: block;
+}
+#landing li input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  caret-color: var(--second-color);
+}
+#landing #signup, #landing #signin {
+  border: 0;
+  display: block;
+  cursor: pointer;
+  margin: 10px 20px;
+  user-select: none;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 6px;
+  width: calc(100% - 40px);
+  background-color: var(--third-color);
+}
+#landing #sociallogin .fb-login-button {
+  margin: auto;
+  display: block;
+  width: fit-content;
+}
+/* Animation */
+@keyframes leftToRight {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes rightToLift {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
