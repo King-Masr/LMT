@@ -1,0 +1,157 @@
+/* Global Variables */
+:root {
+  --first-color: #e4e4e4;
+  --second-color: #f3f3f3;
+  --main-transition: 0.7s;
+}
+/* Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-size: cover;
+  background-image: url("../imgs/background.jpg");
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: #dbbbbb;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#profile {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* pop section */
+section#pop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: fixed;
+  background-color: #52525270;
+}
+/* profile section */
+section#profile {
+  position: fixed;
+  border-radius: 20px;
+  background-color: #ffffffcc;
+}
+/* Smaller Screen */
+@media (min-width: 320px) {
+  section#profile {
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+  }
+}
+/* Small Screen */
+@media (min-width: 425px) {
+  section#profile {
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+  }
+}
+/* Medium Screen */
+@media (min-width: 768px) {
+  section#profile {
+    top: 15%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
+  }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+  section#profile {
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    height: 80%;
+  }
+}
+#profile header {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  min-height: 30%;
+  padding: 10px 20px;
+  justify-content: start;
+  border-bottom: 3px solid var(--first-color);
+}
+#profile header #image {
+  width: fit-content;
+  height: fit-content;
+}
+#profile header img {
+  width: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--first-color);
+}
+/* Small Screen */
+@media (min-width: 425px) {
+  #profile header img {
+    width: 120px;
+  }
+}
+#profile header #info {
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-bottom: auto;
+}
+#profile header h1 {
+  font-size: 1.8em;
+  display: inline;
+}
+/* Small Screen */
+@media (min-width: 425px) {
+  #profile header h1 {
+    font-size: 1em;
+  }
+}
+#profile header p {
+  font-size: 1.3em;
+  margin-top: 10px;
+  color: #9c9c9c;
+}
+#profile main {
+  padding: 20px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 40px);
+}
+#profile main ul {
+  padding: 10px;
+  display: inline-block;
+}
+#profile main li {
+  margin: 25px;
+  padding: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: var(--second-color);
+}
+#profile footer {
+  height: 20%;
+  border-top: 3px solid var(--first-color);
+}
+#profile footer section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
